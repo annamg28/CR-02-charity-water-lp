@@ -25,39 +25,77 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  background-color: #77abbb; /* Soft light blue for a fresh look */
+  font-family: 'Proxima Nova', Arial, sans-serif; /* Use Proxima Nova for all text */
   margin: 0;
   padding: 0;
-  color: #222;
+  color: #1a1a1a;
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
 section {
-  background: #fff; /* White background for sections */
+  background: #fff7e1; /* White background for sections */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
   margin: 24px 10px; /* Space between sections */
   padding: 24px 16px;
 }
 
+/* Header Section Styles */
+/* This styles the top bar with the site name */
+.site-header {
+  background-color: #fff7e1; /* Blue color from brand palette */
+  padding: 16px 0;           /* Space above and below the text */
+  text-align: left;         /* Center the text horizontally */
+  padding-left: 15px;
+}
+
+/* This styles the site name text */
+.site-title {
+  font-family: 'Times New Roman', Times, serif; /* Only heading uses Times New Roman */
+  color: #1a1a1a;                                  /* White text for contrast */
+  margin: 0;                                    /* Remove default margin */
+  font-size: 20px;                              /* Make the text larger */
+}
+
+/* Header Content: aligns logo and site name horizontally */
+.header-content {
+  display: flex;           /* Place image and text in a row */
+  align-items: center;     /* Vertically center them */
+}
+
+/* Header Logo: styles the water can image */
+.header-logo {
+  width: 36px;             /* Make the image small */
+  height: auto;            /* Keep aspect ratio */
+  margin-right: 10px;      /* Space between image and text */
+}
+
 /* Hero Section Styles */
+/* Make the hero section fill the whole page width with no borders, padding, or margins */
 .hero {
   position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+  /* Use only the background image, no overlay */
+  background-image: url('img/girl-drinking.png'); /* use local image */
   background-size: cover;      /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
+  color: #fff7e1;              /* White text for contrast */
   text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
+  margin: 0;                   /* Remove margin */
+  padding: 0;                  /* Remove padding */
+  border-radius: 0;            /* Remove rounded corners */
+  box-shadow: none;            /* Remove shadow */
+  width: 100vw;                /* Make section full viewport width */
+  left: 50%;                   /* Center the section horizontally */
+  right: 50%;
+  transform: translateX(-50%); /* Fix centering for full width */
+  min-height: 600px; /* Make the hero section taller */
 
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  display: flex;                  /* Use flexbox for easy centering */
+  flex-direction: column;         /* Stack headline and subheadline vertically */
+  justify-content: center;        /* Center content vertically */
+  align-items: center;            /* Center content horizontally */
 }
 
 /* Make the headline bold and modern */
@@ -66,53 +104,83 @@ section {
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+  text-shadow: 0 2px 8px #1a1a1a(0,0,0,0.15); /* Soft shadow for readability */
 }
 
 /* Style the subheadline */
 .hero p {
   font-size: 1.2em;
   margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  text-shadow: 0 1px 4px #1a1a1a(0,0,0,0.12);
 }
 
 /* Story Section Styles */
 .story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
+  background-color: #003366; /* Secondary Light Blue */
+  color: #1a1a1a;
   text-align: center;
   padding: 30px 20px;
+  box-shadow: #1a1a1a;
 }
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: #003366; /* Primary blue */
   margin-top: 0;
   font-weight: bold;
+  box-shadow: #1a1a1a;
 }
 
-/* Call-to-Action Section Styles */
+/* Donate Section Styles */
+/* This section is now inside the hero section, so remove background and padding */
+.donate-section {
+  background: none;      /* No background */
+  padding: 0;            /* No extra space */
+  margin-top: 32px;      /* Space above the donate area */
+  text-align: center;    /* Center the donate box horizontally */
+  box-shadow: #1a1a1a;
+}
+
+/* The yellow rectangle with "Donate" text */
+.donate-box {
+  background-color: #FFC907; /* Brand yellow */
+  color: #1a1a1a;            /* Dark text for contrast */
+  display: inline-block;     /* Make the box only as wide as needed */
+  padding: 12px 40px;        /* Space inside the box */
+  border-radius: 10px;       /* Rounded corners */
+  font-size: 17px;          /* Larger text */
+  box-shadow: 0 2px 8px #003366(46, 157, 247, 0.10); /* Soft shadow */
+  margin: 0 auto;            /* Center the box */
+}
+
+/* Style for the donate input box under the yellow rectangle */
+.donate-input {
+  display: block;           /* Put the box on its own line */
+  margin: 18px auto 0 auto; /* Space above, center horizontally */
+  padding: 8px 12px;       /* Space inside the box */
+  border: 2px solid #FFC907;/* Yellow border to match the rectangle */
+  border-radius: 8px;       /* Rounded corners */
+  font-size: 15px;           /* Regular font size */
+  width: 220px;             /* Set a fixed width */
+  box-sizing: border-box;   /* Include padding in width */
+}
+
+/* Remove Call-to-Action Section Styles */
+/*
 .call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
+  background-color: #003366; 
+  color: #1a1a1a;
   text-align: center;
   padding: 30px 20px;
 }
+*/
 
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button Styles */
+/* Remove Donate Button Styles */
+/*
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
+  background-color: #003366; 
+  color: #fff7e1;
   padding: 14px 32px;
   text-decoration: none;
   border-radius: 6px;
@@ -124,24 +192,13 @@ h2 {
   border: none;
   cursor: pointer;
 }
-
-/* Change button color when hovered */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+  background-color: #003366; 
+  transform: translateY(-2px) scale(1.04); 
 }
-
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
-}
-
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
 */
 
+/* In media queries, remove .call-to-action and .donation-section from padding rules */
 /* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
   /* Make hero section padding smaller on small screens */
@@ -160,10 +217,8 @@ section {
     font-size: 1em;
   }
 
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
+  /* Make story section have less padding */
+  .story {
     padding: 14px 8px;
   }
 
